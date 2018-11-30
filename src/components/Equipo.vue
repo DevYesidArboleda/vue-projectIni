@@ -10,6 +10,7 @@
         Jugadores: {{jugadores.length}}
     </p>
     <b-button href="#" variant="primary">Ver jugadores</b-button>
+    <b-button variant="success" :size="lg">prueba</b-button>
     </b-card>
 </template>
 
