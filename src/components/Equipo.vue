@@ -1,27 +1,37 @@
 <template>
-    <b-card :header="nombre" :img-src="Logo" img-alt="Equipos"
+    <b-card :header="info.nombre" :img-src="info.Logo" img-alt="Equipos"
     style="max-width:20rem;"
     class="mb-2"
     >
 
     <p class="card-text">
-        Estado: <div :class="{'activo':estado,'inactivo':!estado}" 
+        Estado: <div :class="{'activo':info.estado,'inactivo':!info.estado}" 
         class="circulo"></div><br/>
-        Jugadores: {{jugadores.length}}
+        Jugadores: {{info.jugadores.length}}
     </p>
     <b-button href="#" variant="primary">Ver jugadores</b-button>
-    <b-button variant="success" :size="lg">prueba</b-button>
+    <b-button :size="sm" variant="success">prueba</b-button>
     </b-card>
 </template>
 
 <script>
 export default {
+
+    props: {
+    info:{
+            nombre: String,
+            Logo: String,
+            estado: Boolean,
+            jugadores: Array
+        }
+    },
+
     data(){
         return{
-            nombre: "Equipo",
-            Logo: "https://via.placeholder.com/600x300/D2B48C/ffffff?text=Logo+equipo",
-            estado:true,
-            jugadores:[{jugador:"1"},{jugador:"1"}, {jugador:"1"}]
+           // nombre: "Equipo",
+           // Logo: "https://via.placeholder.com/600x300/D2B48C/ffffff?text=Logo+equipo",
+           // estado:true,
+           // jugadores:[{jugador:"1"},{jugador:"1"}, {jugador:"1"}]
         }
     }
 }
